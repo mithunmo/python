@@ -1,20 +1,23 @@
 class A(object):
     def go(self):
         print("go A go!")
+
     def stop(self):
         print("stop A stop!")
+
     def pause(self):
         raise Exception("Not Implemented")
 
 class B(A):
     def go(self):
-        super(B, self).go()
+        #super(B, self).go()
         print("go B go!")
 
 class C(A):
     def go(self):
-        super(C, self).go()
+        #super(C, self).go()
         print("go C go!")
+
     def stop(self):
         super(C, self).stop()
         print("stop C stop!")
@@ -31,30 +34,33 @@ class D(B,C):
 
 class E(B,C): pass
 
-a = A()
-b = B()
-c = C()
+# a = A()
+# b = B()
+# c = C()
 d = D()
-e = E()
-
+# e = E()
+print D.__mro__
 # specify output from here onwards
-
-a.go()
-b.go()
-c.go()
 d.go()
-e.go()
+#d.stop()
+#d.pause()
 
-a.stop()
-b.stop()
-c.stop()
-d.stop()
-print "----"
-e.stop()
+# a.go()
+# b.go()
+# c.go()
+# d.go()
+# e.go()
 
-print "---"
-a.pause()
-b.pause()
-c.pause()
-d.pause()
-e.pause()
+# a.stop()
+# b.stop()
+# c.stop()
+# d.stop()
+# print "----"
+# e.stop()
+
+# print "---"
+# a.pause()
+# b.pause()
+# c.pause()
+# d.pause()
+# e.pause()

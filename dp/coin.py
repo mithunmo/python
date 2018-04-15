@@ -4,10 +4,11 @@ def coin(arr, amount):
     else:
         minval = 1000
         for i in arr:
+            print i
             if i <= amount: 
                 minval = min(minval, 1 + coin(arr, amount - i))
         return minval
 
 
-vl = coin([9,6,5,1], 11)
+vl = coin([9,6,5,1], 9)
 print vl
